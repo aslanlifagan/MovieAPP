@@ -16,10 +16,7 @@ final class HomeTabBarCoordinator : Coordinator {
     private let tabBarController = TabBarController()
     
     private var homeCoordinator: HomeCoordinator?
-//    private var orderCoordinator: OrderCoordinator?
-//    private var jewelryCoordinator: JewelryCoordinator?
-//    private var searchCoordinator: SearchCoordinator?
-//    private var profileCoordinator: ProfileCoordinator?
+    private var favouriteCoordinator: FavouriteCoordinator?
     
     init(
         navigationController : UINavigationController
@@ -48,9 +45,20 @@ final class HomeTabBarCoordinator : Coordinator {
         homeItem.selectedImage = UIImage(systemName: "house.fill")
         homeNavigationController.tabBarItem = homeItem
         
+        let favNavController = UINavigationController()
+        favouriteCoordinator = FavouriteCoordinator(navigationController: favNavController)
+        favouriteCoordinator?.parentCoordinator = parentCoordinator
+        
+        // Setup for fav tab
+        let favItem = UITabBarItem()
+        favItem.title = "Favourite"
+        favItem.image = UIImage(systemName: "heart")
+        favItem.selectedImage = UIImage(systemName: "heart.fill")
+        favNavController.tabBarItem = favItem
         
         tabBarController.viewControllers = [
-            homeNavigationController
+            homeNavigationController,
+            favNavController
         ]
         
         navigationController.pushViewController(tabBarController, animated: true)
@@ -60,6 +68,12 @@ final class HomeTabBarCoordinator : Coordinator {
         parentCoordinator?.children.append(
             homeCoordinator ?? HomeCoordinator(navigationController: UINavigationController())
         )
+        
+        parentCoordinator?.children.append(
+            favouriteCoordinator ?? FavouriteCoordinator(navigationController: UINavigationController())
+        )
+        
         homeCoordinator?.start()
+        favouriteCoordinator?.start()
     }
 }

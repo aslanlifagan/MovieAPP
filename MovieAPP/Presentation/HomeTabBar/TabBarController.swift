@@ -17,20 +17,20 @@ final class TabBarController: UITabBarController {
         view.backgroundColor = .white
         tabBar.isTranslucent = false
         tabBar.barTintColor = .white
-        tabBar.tintColor = .red
-        tabBar.unselectedItemTintColor = .red
-        tabBar.tintColor = .red
+        tabBar.tintColor = .blue
+        tabBar.unselectedItemTintColor = .blue
+        tabBar.tintColor = .blue
         tabBar.shadowImage = UIImage()
         tabBar.backgroundImage = UIImage()
         tabBar.layer.masksToBounds = true
         UITabBarItem.appearance()
             .setTitleTextAttributes(
-                [NSAttributedString.Key.foregroundColor: UIColor.black],
+                [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel],
                 for: .normal
             )
         UITabBarItem.appearance()
             .setTitleTextAttributes(
-                [NSAttributedString.Key.foregroundColor: UIColor.black],
+                [NSAttributedString.Key.foregroundColor: UIColor.label],
                 for: .selected
             )
         delegate = self
