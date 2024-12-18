@@ -11,17 +11,18 @@ final class CoreAPIManager {
     private init() {}
     
     func request<T: Decodable>(
-        type: T.Type, //response ne olacaq
-        url: URL?, // url ne olacaq
+        type: T.Type,
+        url: URL?,
+        header: [String: String] = CoreAPIHelper.instance.makeHeader(),
+        body: [String: Any] = [:],
         method: HttpMethods,
-        header: [String: String] = CoreAPIHelper.instance.makeHeader(), //header
-        body: [String : Any] = [:], // body
         completion: @escaping((Result<T,CoreErrorModel>) -> Void)
     ) {
         guard let url = url else {return}
         print("URL:", url)
         let session = URLSession.shared
         var request = URLRequest(url: url)
+        
         request.httpMethod = method.rawValue
         if !body.isEmpty {
             let bodyData = try? JSONSerialization.data(withJSONObject: body, options: [])
@@ -33,26 +34,32 @@ final class CoreAPIManager {
         request.allHTTPHeaderFields = header
         print("header: \(header)")
         
-        
-        let task = session.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else {return}
-            guard let response = response as? HTTPURLResponse else {return}
-            if response.statusCode == 401 {
-                completion(.failure(CoreErrorModel.authError(code: response.statusCode)))
-            }
-            
-            print(response.statusCode)
-            guard let error = error else {
-                guard let data = data else {return}
-                handleResponse(data: data, completion: completion)
+        let dataTask = session.dataTask(with: request) { [weak self] data, response, error in
+            let statusCode = (response as! HTTPURLResponse).statusCode
+            print("responseCode: \(statusCode)")
+            if statusCode == 401 {
+                completion(.failure(CoreErrorModel.authError(code: statusCode)))
                 return
             }
-            completion(.failure(CoreErrorModel(code: response.statusCode, message: error.localizedDescription)))
+            
+            guard let self = self else {return}
+            if let _ = error {
+                completion(.failure(CoreErrorModel.generalError()))
+            } else if let data = data {
+                self.handleResponse(data: data) { response in
+                    completion(response)
+                }
+            } else {
+                completion(.failure(CoreErrorModel.generalError()))
+            }
         }
-        task.resume()
+        
+        DispatchQueue.global(qos: .background).async {
+            dataTask.resume()
+        }
     }
     
-    fileprivate func handleResponse<T: Decodable>( // Json'u Parse etdiyimiz function
+    fileprivate func handleResponse<T: Decodable>(
         data: Data,
         completion: @escaping((Result<T,CoreErrorModel>) -> Void)
     ) {
