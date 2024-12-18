@@ -14,7 +14,7 @@ final class CoreAPIManager {
         type: T.Type, //response ne olacaq
         url: URL?, // url ne olacaq
         method: HttpMethods,
-        header: [String: String] = [:], //header
+        header: [String: String] = CoreAPIHelper.instance.makeHeader(), //header
         body: [String : Any] = [:], // body
         completion: @escaping((Result<T,CoreErrorModel>) -> Void)
     ) {
@@ -22,13 +22,16 @@ final class CoreAPIManager {
         print("URL:", url)
         let session = URLSession.shared
         var request = URLRequest(url: url)
-        request.allHTTPHeaderFields = header
         request.httpMethod = method.rawValue
         if !body.isEmpty {
             let bodyData = try? JSONSerialization.data(withJSONObject: body, options: [])
             request.httpBody = bodyData
             print("body: \(String(data: try! JSONSerialization.data(withJSONObject: body, options: .prettyPrinted), encoding: .utf8)!)")
         }
+        
+        
+        request.allHTTPHeaderFields = header
+        print("header: \(header)")
         
         
         let task = session.dataTask(with: url) { [weak self] data, response, error in
@@ -55,7 +58,7 @@ final class CoreAPIManager {
     ) {
         do {
             let response = try JSONDecoder().decode(T.self, from: data)
-//            print("Response:",response)
+            print("Response:",response)
             completion(.success(response))
         }
         catch {

@@ -22,6 +22,7 @@ final class HomeController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        viewModel.getMovieList()
         // Do any additional setup after loading the view.
     }
 }
