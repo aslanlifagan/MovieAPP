@@ -27,6 +27,16 @@ final class HomeViewModel {
         trendingUse = TrendingAPIService()
     }
     
+    //MARK: Tranding
+    
+    func getTrandingCount() -> Int {
+        movieDto?.results?.count ?? 0
+    }
+    
+    func getTrandingMovie(index: Int) -> MovieResult? {
+        return movieDto?.results?[index]
+    }
+    
     func getMovieList() {
         requestCallBack?(.loading)
         trendingUse.getTrendingMovie(

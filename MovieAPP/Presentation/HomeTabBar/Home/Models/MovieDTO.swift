@@ -36,7 +36,7 @@ struct MovieResult: Codable {
     let voteCount: Int?
     let name, originalName, firstAirDate: String?
     let originCountry: [String]?
-
+    private var imageBasePath = "https://image.tmdb.org/t/p/w500"
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
         case id, title
@@ -56,5 +56,26 @@ struct MovieResult: Codable {
         case originalName = "original_name"
         case firstAirDate = "first_air_date"
         case originCountry = "origin_country"
+    }
+}
+
+//MARK: MovieCellProtocol
+extension MovieResult: MovieCellProtocol {
+    var titleString: String {
+        if !(title?.isEmpty ?? true) {
+            originalTitle ?? ""
+        } else if !(name?.isEmpty ?? true) {
+            name ?? ""
+        } else {
+            "Movie_title"
+        }
+    }
+    
+    var subtitleString: String {
+        releaseDate ?? ""
+    }
+    
+    var iconURL: String {
+        imageBasePath + (posterPath ?? "")
     }
 }

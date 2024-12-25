@@ -15,6 +15,8 @@ final class MovieCell: UICollectionViewCell {
     private lazy var productImage = UIImageView().withUsing {
         $0.backgroundColor = .clear
         $0.image = UIImage(named: "poster")
+        $0.layer.cornerRadius = 12
+        $0.layer.masksToBounds = true
     }
     
     private lazy var titleLabel = UILabel().withUsing {
@@ -67,6 +69,9 @@ final class MovieCell: UICollectionViewCell {
     func configureCell(model: MovieCellProtocol) {
         titleLabel.text = model.titleString
         subtitleLabel.text = model.subtitleString
-//        productImage.image =
+        if !model.iconURL.isEmpty {
+            productImage.loadImageURL(url: model.iconURL)
+        }
+        
     }
 }

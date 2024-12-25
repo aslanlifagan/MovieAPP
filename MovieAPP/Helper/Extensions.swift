@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-//import SDWebImage
+import SDWebImage
 
 extension Double {
     func convertToString() -> String {
@@ -195,13 +195,13 @@ extension String {
     }
 }
 
-//extension UIImageView {
-//    func loadImageURL(url: String) {
-//        guard let url = URL(string: url) else {return}
-////        print(#function, url)
-//        self.sd_setImage(with: url)
-//    }
-//}
+extension UIImageView {
+    func loadImageURL(url: String) {
+        guard let url = URL(string: url) else {return}
+//        print(#function, url)
+        self.sd_setImage(with: url)
+    }
+}
 
 extension UIEdgeInsets {
     // Initialize UIEdgeInsets with equal padding for all sides

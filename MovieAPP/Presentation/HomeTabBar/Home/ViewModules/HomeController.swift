@@ -28,6 +28,11 @@ final class HomeController: BaseViewController {
         $0.addTarget(self, action: #selector(reloadPage), for: .valueChanged)
     }
     
+    private lazy var loadingView = UIActivityIndicatorView().withUsing {
+        $0.style = .large
+        $0.color = .blue
+    }
+    
     private let layout: HomeCollectionLayout
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -41,17 +46,38 @@ final class HomeController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.getMovieList()
+        configureViewModel()
+        viewModel.getMovieList()
         // Do any additional setup after loading the view.
     }
     
     override func configureView() {
-        view.addSubViews(collectionView)
+        view.addSubViews(loadingView,collectionView)
         configureCompositionalLayout()
     }
     
     override func configureConstraint() {
         collectionView.fillSuperview()
+        loadingView.fillSuperview()
+    }
+    
+    private func configureViewModel() {
+        viewModel.requestCallBack = { [weak self] state in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                switch state {
+                    case .loading:
+                        self.loadingView.startAnimating()
+                    case .loaded:
+                        self.loadingView.stopAnimating()
+                        self.refreshControl.endRefreshing()
+                    case .success:
+                        self.collectionView.reloadData()
+                    case .error(let error):
+                        self.showMessage(title: "Xeta", message: error)
+                }
+            }
+        }
     }
     
     @objc
@@ -85,7 +111,7 @@ extension HomeController: UICollectionViewDelegate,
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             switch section {
-                case 1: return 4
+                case 0: return viewModel.getTrandingCount()
                 case 2 : return 10
                 default: return 1
             }
@@ -101,6 +127,11 @@ extension HomeController: UICollectionViewDelegate,
             switch indexPath.section {
                 case 0: 
                     let cell: MovieCell = collectionView.dequeue(for: indexPath)
+                    guard let item = viewModel
+                        .getTrandingMovie(index: indexPath.item) else {
+                        return UICollectionViewCell()
+                    }
+                    cell.configureCell(model: item)
                     return cell
                 case 1:
                     let cell: MovieCell = collectionView.dequeue(for: indexPath)
