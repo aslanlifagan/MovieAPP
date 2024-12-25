@@ -11,6 +11,8 @@
 		820383A12D1C582300B76BEB /* HomeLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820383A02D1C582300B76BEB /* HomeLayouts.swift */; };
 		820383A42D1C619A00B76BEB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 820383A32D1C619A00B76BEB /* SDWebImage */; };
 		820383A62D1C619A00B76BEB /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 820383A52D1C619A00B76BEB /* SDWebImageMapKit */; };
+		820383A92D1C663400B76BEB /* TrandingSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820383A82D1C663400B76BEB /* TrandingSectionCell.swift */; };
+		820383AB2D1C6A9A00B76BEB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820383AA2D1C6A9A00B76BEB /* SectionHeader.swift */; };
 		8217D0292D13229F00D98296 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217D0282D13229F00D98296 /* Extensions.swift */; };
 		8217D02B2D1322B400D98296 /* LayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217D02A2D1322B400D98296 /* LayoutExtension.swift */; };
 		8217D02D2D1322DA00D98296 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217D02C2D1322DA00D98296 /* BaseViewController.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		8203839D2D1C55FE00B76BEB /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		820383A02D1C582300B76BEB /* HomeLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayouts.swift; sourceTree = "<group>"; };
+		820383A82D1C663400B76BEB /* TrandingSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandingSectionCell.swift; sourceTree = "<group>"; };
+		820383AA2D1C6A9A00B76BEB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		8217D0282D13229F00D98296 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8217D02A2D1322B400D98296 /* LayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtension.swift; sourceTree = "<group>"; };
 		8217D02C2D1322DA00D98296 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +88,9 @@
 		8203839C2D1C55F200B76BEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				820383A72D1C661D00B76BEB /* Cells */,
 				8203839F2D1C581A00B76BEB /* Layouts */,
-				8203839D2D1C55FE00B76BEB /* MovieCell.swift */,
+				820383AA2D1C6A9A00B76BEB /* SectionHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +101,15 @@
 				820383A02D1C582300B76BEB /* HomeLayouts.swift */,
 			);
 			path = Layouts;
+			sourceTree = "<group>";
+		};
+		820383A72D1C661D00B76BEB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8203839D2D1C55FE00B76BEB /* MovieCell.swift */,
+				820383A82D1C663400B76BEB /* TrandingSectionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8217D0202D13220900D98296 /* App */ = {
@@ -372,6 +386,7 @@
 				825FCBE02D13328700B57BF1 /* TrendingUseCase.swift in Sources */,
 				8217D03B2D13244000D98296 /* SceneDelegate.swift in Sources */,
 				8217D03C2D13244000D98296 /* Coordinator.swift in Sources */,
+				820383AB2D1C6A9A00B76BEB /* SectionHeader.swift in Sources */,
 				8217D0442D13271000D98296 /* HomeTabBarCoordinator.swift in Sources */,
 				825FCBE22D13329700B57BF1 /* TrendingAPIService.swift in Sources */,
 				8217D0352D13234600D98296 /* CoreAPIManager.swift in Sources */,
@@ -384,6 +399,7 @@
 				8217D04E2D132BDF00D98296 /* FavouriteCoordinator.swift in Sources */,
 				8217D02D2D1322DA00D98296 /* BaseViewController.swift in Sources */,
 				825FCBDE2D13327B00B57BF1 /* TrendingHelper.swift in Sources */,
+				820383A92D1C663400B76BEB /* TrandingSectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

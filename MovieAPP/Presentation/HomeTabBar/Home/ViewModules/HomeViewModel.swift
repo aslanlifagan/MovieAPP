@@ -10,7 +10,7 @@ final class HomeViewModel {
     enum ViewState {
         case loading
         case loaded
-        case success
+        case successTranding
         case error(String)
     }
     
@@ -19,7 +19,11 @@ final class HomeViewModel {
     }
     
     private var trendingUse: TrendingUseCase
-    private var type: TimeInterval = .day
+    var type: TimeInterval = .day {
+        didSet {
+            getMovieList()
+        }
+    }
     private (set) var movieDto: MovieDTO?
     
     var requestCallBack: ((ViewState) -> Void)?
@@ -37,7 +41,7 @@ final class HomeViewModel {
         return movieDto?.results?[index]
     }
     
-    func getMovieList() {
+    private func getMovieList() {
         requestCallBack?(.loading)
         trendingUse.getTrendingMovie(
             timeInterval: type.rawValue) { [weak self] dto, error in
@@ -45,7 +49,7 @@ final class HomeViewModel {
                 requestCallBack?(.loaded)
                 if let dto = dto {
                     movieDto = dto
-                    requestCallBack?(.success)
+                    requestCallBack?(.successTranding)
                 } else if let error = error {
                     requestCallBack?(.error(error))
                 }

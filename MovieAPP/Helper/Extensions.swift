@@ -97,6 +97,7 @@ extension UICollectionView {
     }
     
     func register<T: UICollectionReusableView>(header: T.Type) {
+        
         register(
             T.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,

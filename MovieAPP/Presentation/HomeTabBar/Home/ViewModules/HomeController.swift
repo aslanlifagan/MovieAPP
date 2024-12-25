@@ -19,6 +19,9 @@ final class HomeController: BaseViewController {
         cv.delegate = self
         cv.dataSource = self
         cv.register(cell: MovieCell.self)
+        cv.register(cell: TrandingSectionCell.self)
+        cv.register(header: SectionHeader.self)
+//        cv.register(SectionHeader.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: "SectionHeader")
         cv.backgroundColor = .clear
         cv.refreshControl = refreshControl
         return cv
@@ -47,7 +50,7 @@ final class HomeController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
-        viewModel.getMovieList()
+        viewModel.type = .day
         // Do any additional setup after loading the view.
     }
     
@@ -71,8 +74,8 @@ final class HomeController: BaseViewController {
                     case .loaded:
                         self.loadingView.stopAnimating()
                         self.refreshControl.endRefreshing()
-                    case .success:
-                        self.collectionView.reloadData()
+                    case .successTranding:
+                        self.collectionView.reloadSections(.init(arrayLiteral: 1))
                     case .error(let error):
                         self.showMessage(title: "Xeta", message: error)
                 }
@@ -82,7 +85,7 @@ final class HomeController: BaseViewController {
     
     @objc
     private func reloadPage() {
-        viewModel.getMovieList()
+        viewModel.type = .day
     }
 }
 
@@ -93,7 +96,7 @@ extension HomeController {
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, environment in
             guard let self = self else {return nil}
             switch sectionIndex {
-                case 0 : return self.layout.trandingSection()
+                case 0 : return self.layout.trandingSegmentSection()
                 default: return self.layout.trandingSection()
             }
         }
@@ -111,30 +114,31 @@ extension HomeController: UICollectionViewDelegate,
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             switch section {
-                case 0: return viewModel.getTrandingCount()
-                case 2 : return 10
+                case 0: return 1
+                case 1 : return viewModel.getTrandingCount()
                 default: return 1
             }
         }
     
     func numberOfSections(
         in collectionView: UICollectionView
-    ) -> Int { 3 }
+    ) -> Int { 4 }
     
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             switch indexPath.section {
                 case 0: 
+                    let cell: TrandingSectionCell = collectionView.dequeue(for: indexPath)
+                    cell.delegate = self
+                    return cell
+                case 1:
                     let cell: MovieCell = collectionView.dequeue(for: indexPath)
                     guard let item = viewModel
                         .getTrandingMovie(index: indexPath.item) else {
                         return UICollectionViewCell()
                     }
                     cell.configureCell(model: item)
-                    return cell
-                case 1:
-                    let cell: MovieCell = collectionView.dequeue(for: indexPath)
                     return cell
                 default:
                     let cell: MovieCell = collectionView.dequeue(for: indexPath)
@@ -147,4 +151,23 @@ extension HomeController: UICollectionViewDelegate,
         didSelectItemAt indexPath: IndexPath) {
             print(#function, indexPath.section, indexPath.item)
         }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        let header: SectionHeader = collectionView.dequeue(header: SectionHeader.self, for: indexPath)
+//            let header = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
+        return header
+        
+
+    }
+}
+
+extension HomeController: TrandingSectionCellProtocol {
+    func didClickSegment(index: Int) {
+        viewModel.type = index == 0 ? .day : .week
+        print(#function, index)
+    }
 }
