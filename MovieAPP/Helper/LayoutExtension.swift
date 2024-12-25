@@ -6,6 +6,15 @@
 //
 
 import UIKit
+public protocol WithUsingProtocol {}
+extension UIView: WithUsingProtocol {}
+
+extension WithUsingProtocol {
+    public func withUsing(_ closure: (Self) -> Void) -> Self {
+        closure(self)
+        return self
+    }
+}
 // MARK: - UIView Extension
 extension UIView {
     
