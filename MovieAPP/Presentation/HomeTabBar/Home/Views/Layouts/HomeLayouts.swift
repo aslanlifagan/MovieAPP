@@ -21,9 +21,9 @@ final class HomeCollectionLayout {
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.orthogonalScrollingBehavior = .continuous
-        section.boundarySupplementaryItems = [
-            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), elementKind: "UICollectionElementKindSectionHeader", alignment: .top),
-        ]
+//        section.boundarySupplementaryItems = [
+//            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), elementKind: "UICollectionElementKindSectionHeader", alignment: .top),
+//        ]
         return section
     }
     
