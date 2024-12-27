@@ -41,6 +41,10 @@
 		828DD4992D1EFD7C001B4B0B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 828DD4982D1EFD7C001B4B0B /* FirebaseCore */; };
 		828DD49B2D1EFEC4001B4B0B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 828DD49A2D1EFEC4001B4B0B /* FirebaseFirestore */; };
 		828DD49D2D1EFECD001B4B0B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 828DD49C2D1EFECD001B4B0B /* FirebaseAuth */; };
+		82F639282D1F094A007FB34D /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F639272D1F094A007FB34D /* AuthCoordinator.swift */; };
+		82F6392A2D1F0953007FB34D /* AuthNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F639292D1F0953007FB34D /* AuthNavigation.swift */; };
+		82F6392E2D1F099A007FB34D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F6392D2D1F099A007FB34D /* LoginController.swift */; };
+		82F639302D1F09A5007FB34D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F6392F2D1F09A5007FB34D /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		827843E72D13214B00BD6B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		827843E92D13214B00BD6B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		828DD4942D1EFCD1001B4B0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		82F639272D1F094A007FB34D /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		82F639292D1F0953007FB34D /* AuthNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigation.swift; sourceTree = "<group>"; };
+		82F6392D2D1F099A007FB34D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		82F6392F2D1F09A5007FB34D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +188,11 @@
 		8217D0272D13227900D98296 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				82F639272D1F094A007FB34D /* AuthCoordinator.swift */,
+				82F639292D1F0953007FB34D /* AuthNavigation.swift */,
+				82F639262D1F092D007FB34D /* Models */,
+				82F639252D1F0922007FB34D /* ViewModules */,
+				82F639242D1F091C007FB34D /* Views */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -314,6 +327,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		82F639242D1F091C007FB34D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		82F639252D1F0922007FB34D /* ViewModules */ = {
+			isa = PBXGroup;
+			children = (
+				82F6392C2D1F0984007FB34D /* RegisterController */,
+				82F6392B2D1F0970007FB34D /* LoginController */,
+			);
+			path = ViewModules;
+			sourceTree = "<group>";
+		};
+		82F639262D1F092D007FB34D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82F6392B2D1F0970007FB34D /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				82F6392D2D1F099A007FB34D /* LoginController.swift */,
+				82F6392F2D1F09A5007FB34D /* LoginViewModel.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		82F6392C2D1F0984007FB34D /* RegisterController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegisterController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,14 +456,17 @@
 				827843DC2D13214900BD6B34 /* AppDelegate.swift in Sources */,
 				820383A12D1C582300B76BEB /* HomeLayouts.swift in Sources */,
 				8217D0482D13287B00D98296 /* HomeCoordinator.swift in Sources */,
+				82F639302D1F09A5007FB34D /* LoginViewModel.swift in Sources */,
 				8217D02B2D1322B400D98296 /* LayoutExtension.swift in Sources */,
 				825FCBE02D13328700B57BF1 /* TrendingUseCase.swift in Sources */,
 				8217D03B2D13244000D98296 /* SceneDelegate.swift in Sources */,
 				8217D03C2D13244000D98296 /* Coordinator.swift in Sources */,
+				82F6392E2D1F099A007FB34D /* LoginController.swift in Sources */,
 				820383AB2D1C6A9A00B76BEB /* SectionHeader.swift in Sources */,
 				8217D0442D13271000D98296 /* HomeTabBarCoordinator.swift in Sources */,
 				825FCBE22D13329700B57BF1 /* TrendingAPIService.swift in Sources */,
 				8217D0352D13234600D98296 /* CoreAPIManager.swift in Sources */,
+				82F639282D1F094A007FB34D /* AuthCoordinator.swift in Sources */,
 				825FCBE52D1335F900B57BF1 /* MovieDTO.swift in Sources */,
 				8217D03A2D13244000D98296 /* AppCoordinator.swift in Sources */,
 				8203839E2D1C55FE00B76BEB /* MovieCell.swift in Sources */,
@@ -420,6 +475,7 @@
 				8217D0522D132BEE00D98296 /* FavouriteController.swift in Sources */,
 				8217D04E2D132BDF00D98296 /* FavouriteCoordinator.swift in Sources */,
 				8217D02D2D1322DA00D98296 /* BaseViewController.swift in Sources */,
+				82F6392A2D1F0953007FB34D /* AuthNavigation.swift in Sources */,
 				825FCBDE2D13327B00B57BF1 /* TrendingHelper.swift in Sources */,
 				820383A92D1C663400B76BEB /* TrandingSectionCell.swift in Sources */,
 			);

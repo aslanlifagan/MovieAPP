@@ -16,7 +16,7 @@ final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     // burada userDefaults'dan istifade edirik
-    var isLogin: Bool = true
+    var isLogin: Bool = false
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -31,10 +31,10 @@ final class AppCoordinator: Coordinator {
     
     fileprivate func showAuth() {
         children.removeAll()
-//        let authCoordinator = AuthCoordinator(navigationController: navigationController)
-//        children.append(authCoordinator)
-//        authCoordinator.parentCoordinator = self
-//        authCoordinator.start()
+        let authCoordinator = AuthCoordinator(navigationController: navigationController)
+        children.append(authCoordinator)
+        authCoordinator.parentCoordinator = self
+        authCoordinator.start()
     }
     
     fileprivate func showHome() {
