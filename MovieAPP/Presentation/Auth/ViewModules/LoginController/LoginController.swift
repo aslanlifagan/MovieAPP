@@ -69,6 +69,7 @@ final class LoginController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewModel()
     }
     
     override func configureView() {
@@ -99,14 +100,31 @@ final class LoginController: BaseViewController {
         registerButton.addTarget(self, action: #selector(registerButtonClicked), for: .touchUpInside)
     }
     
+    private func configureViewModel() {
+        viewModel.requestCallBack = { [weak self ] state in
+            guard let self = self else {return}
+            switch state {
+                case .loading:
+                    print(state)
+                case .loaded:
+                    print(state)
+                case .success:
+                    viewModel.showHome()
+                case .error(let error):
+                    showMessage(message: error)
+            }
+        }
+    }
     @objc
     private func loginButtonClicked() {
-        print(#function)
+        guard let email = emailField.text,
+              let pass = passField.text else {return}
+        viewModel.loginRequest(email: email, password: pass)
     }
     
     @objc
     private func registerButtonClicked() {
-        print(#function)
+        viewModel.showRegister()
     }
     
 }
@@ -122,5 +140,7 @@ extension LoginController: UITextFieldDelegate {
                 print("pass:", text)
             default: return
         }
+        //TODO: Func chixart ve validationlari tetbiq et
+
     }
 }
