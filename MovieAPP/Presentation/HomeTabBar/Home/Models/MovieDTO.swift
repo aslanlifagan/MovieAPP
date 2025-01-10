@@ -79,3 +79,18 @@ extension MovieResult: MovieCellProtocol {
         imageBasePath + (posterPath ?? "")
     }
 }
+
+
+//MARK: MovieDetail
+// mapping a modelinden b modeline deyishmekdir ve function esasen a modelini ichinde yazilir
+extension MovieResult {
+
+    func mapToDetail() -> MovieDetail {
+        .init(
+            icon: iconURL,
+            title: titleString,
+            releaseDate: releaseDate ?? "01.01.2020",
+            mediaType: mediaType ?? ""
+        )
+    }
+}

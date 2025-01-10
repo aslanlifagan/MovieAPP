@@ -21,7 +21,7 @@ final class HomeController: BaseViewController {
         cv.register(cell: MovieCell.self)
         cv.register(cell: TrandingSectionCell.self)
         cv.register(header: SectionHeader.self)
-//        cv.register(SectionHeader.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: "SectionHeader")
+        //        cv.register(SectionHeader.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: "SectionHeader")
         cv.backgroundColor = .clear
         cv.refreshControl = refreshControl
         return cv
@@ -128,7 +128,7 @@ extension HomeController: UICollectionViewDelegate,
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             switch indexPath.section {
-                case 0: 
+                case 0:
                     let cell: TrandingSectionCell = collectionView.dequeue(for: indexPath)
                     cell.delegate = self
                     return cell
@@ -149,7 +149,7 @@ extension HomeController: UICollectionViewDelegate,
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
-            print(#function, indexPath.section, indexPath.item)
+            viewModel.navigateDetail(indexPath: indexPath)
         }
     
     func collectionView(
@@ -158,10 +158,10 @@ extension HomeController: UICollectionViewDelegate,
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
         let header: SectionHeader = collectionView.dequeue(header: SectionHeader.self, for: indexPath)
-//            let header = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
+        //            let header = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
         return header
         
-
+        
     }
 }
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit.UINavigationController
+import SafariServices
 
 protocol Coordinator : AnyObject {
     var parentCoordinator: Coordinator? { get set } // esas coordinatorumuz olanda biz bunu chaghirib = self
@@ -31,6 +32,12 @@ extension Coordinator {
     
     func showController(vc: UIViewController) {
         navigationController.show(vc, sender: nil)
+    }
+    
+    func showWebPage(with urlString: String) {
+        guard let url = URL(string: urlString) else {return}
+        let controller = SFSafariViewController(url: url)
+        navigationController.show(controller, sender: nil)
     }
 }
 

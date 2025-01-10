@@ -36,7 +36,7 @@ final class LoginViewModel {
                 requestCallBack?(.error(error.localizedDescription))
                 return
             }
-            guard let result = authResult else { return }
+            guard let _ = authResult else { return }
             requestCallBack?(.success)
         }
         

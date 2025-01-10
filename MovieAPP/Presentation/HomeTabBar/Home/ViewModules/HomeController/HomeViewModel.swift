@@ -27,8 +27,12 @@ final class HomeViewModel {
     private (set) var movieDto: MovieDTO?
     
     var requestCallBack: ((ViewState) -> Void)?
-    init() {
+    
+    weak var navigation: HomeNavigation?
+    
+    init(navigation: HomeNavigation) {
         trendingUse = TrendingAPIService()
+        self.navigation = navigation
     }
     
     //MARK: Tranding
@@ -54,5 +58,24 @@ final class HomeViewModel {
                     requestCallBack?(.error(error))
                 }
             }
+    }
+    
+    
+    //MARK: Coordinator
+    
+    func navigateDetail(indexPath: IndexPath) {
+        switch indexPath.section {
+            case 1:
+                guard let detail = getTrandingMovie(index: indexPath.row)?.mapToDetail() else {return}
+                showDetail(detail: detail)
+            default:
+                print(indexPath, #function)
+                return
+        }
+        
+    }
+    
+    private func showDetail(detail: MovieDetail) {
+        navigation?.showMovieDetail(detail: detail)
     }
 }

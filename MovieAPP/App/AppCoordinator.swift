@@ -16,7 +16,7 @@ final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     // burada userDefaults'dan istifade edirik
-    var isLogin: Bool = false
+    var isLogin: Bool = true
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
