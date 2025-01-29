@@ -51,7 +51,6 @@ final class HomeController: BaseViewController {
         super.viewDidLoad()
         configureViewModel()
         viewModel.type = .day
-        viewModel.name = 0
         // Do any additional setup after loading the view.
     }
     

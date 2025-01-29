@@ -27,10 +27,7 @@ final class CoreAPIHelper {
         let urlString = baseURL + path
         return URL(string:urlString)
     }
-    private let token = ""
-    
-//    "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZmZjOTk4YmQwMDNlYmY4NjExNjE4NzQzODgxODYxNCIsInN1YiI6IjY1ZGIxZTAyOWI2ZTQ3MDE4NjAwYWI4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fzVDj8_nT9CH8dIMRHCSICGu-FnWbH08kvtYmY6m4ag"
-//
+    private let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZmZjOTk4YmQwMDNlYmY4NjExNjE4NzQzODgxODYxNCIsInN1YiI6IjY1ZGIxZTAyOWI2ZTQ3MDE4NjAwYWI4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fzVDj8_nT9CH8dIMRHCSICGu-FnWbH08kvtYmY6m4ag"
     func makeHeader() -> [String: String] {
         return [
             "accept": "application/json",

@@ -6,8 +6,11 @@
 //
 
 import Foundation
+
 final class TrendingAPIService: TrendingUseCase {
+    
     private let apiService = CoreAPIManager.instance
+    
     func getTrendingMovie(
         timeInterval: String,
         completion: @escaping (MovieDTO?, String?) -> Void?

@@ -1,0 +1,434 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "backdrop_path": "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg",
+      "id": 1241982,
+      "title": "Moana 2",
+      "original_title": "Moana 2",
+      "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+      "poster_path": "/m0SbwFNCa9epW1X60deLqTHiP7x.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        16,
+        12,
+        10751,
+        35,
+        9648
+      ],
+      "popularity": 2517.754,
+      "release_date": "2024-11-21",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 1002
+    },
+    {
+      "backdrop_path": "/hctfNoMpQGfn3VXdBYb9p0P5bT5.jpg",
+      "id": 1097549,
+      "title": "Babygirl",
+      "original_title": "Babygirl",
+      "overview": "A high-powered CEO puts her career and family on the line when she begins a torrid affair with her much younger intern.",
+      "poster_path": "/A8HbTd0FemZyFCh5qvJFpHGiwF8.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        53,
+        18
+      ],
+      "popularity": 359.524,
+      "release_date": "2024-12-25",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 170
+    },
+    {
+      "backdrop_path": "/q3Rgy4pQlPBou8ilYaVdHmjylyV.jpg",
+      "id": 604685,
+      "title": "Den of Thieves 2: Pantera",
+      "original_title": "Den of Thieves 2: Pantera",
+      "overview": "Big Nick is back on the hunt in Europe and closing in on Donnie, who is embroiled in the treacherous and unpredictable world of diamond thieves and the infamous Panther mafia, as they plot a massive heist of the world's largest diamond exchange.",
+      "poster_path": "/zLHq7fQA3xpck5UIHcRYgip5pQD.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "popularity": 403.943,
+      "release_date": "2025-01-08",
+      "video": false,
+      "vote_average": 6.4,
+      "vote_count": 69
+    },
+    {
+      "backdrop_path": "/qV2REPQ7pPlmQT7Mljkca0wi4Bx.jpg",
+      "id": 245927,
+      "name": "Paradise",
+      "original_name": "Paradise",
+      "overview": "The tranquility in a serene, wealthy community inhabited by some of the world's most prominent individuals explodes when a shocking murder occurs and a high stakes investigation unfolds.",
+      "poster_path": "/rkwqy7uE0ORdUxDFNeVq7vpJORN.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "popularity": 125.24,
+      "first_air_date": "2025-01-26",
+      "vote_average": 6.6,
+      "vote_count": 10,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+      "id": 939243,
+      "title": "Sonic the Hedgehog 3",
+      "original_title": "Sonic the Hedgehog 3",
+      "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+      "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        878,
+        35,
+        10751
+      ],
+      "popularity": 4739.045,
+      "release_date": "2024-12-19",
+      "video": false,
+      "vote_average": 7.864,
+      "vote_count": 1180
+    },
+    {
+      "backdrop_path": "/h7r6LZ32dgLwtwSW3CxoWIYD9pr.jpg",
+      "id": 426063,
+      "title": "Nosferatu",
+      "original_title": "Nosferatu",
+      "overview": "A gothic tale of obsession between a haunted young woman and the terrifying vampire infatuated with her, causing untold horror in its wake.",
+      "poster_path": "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        14
+      ],
+      "popularity": 1801.675,
+      "release_date": "2024-12-25",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 1634
+    },
+    {
+      "backdrop_path": "/bIHesRfHfP6XZbVLHjiQF9whCaI.jpg",
+      "id": 138503,
+      "name": "Your Friendly Neighborhood Spider-Man",
+      "original_name": "Your Friendly Neighborhood Spider-Man",
+      "overview": "Peter Parker is on his way to becoming a hero, but his path to get there is anything but ordinary.",
+      "poster_path": "/kjcsNeqF52YUQ2rUBGLMHwLkxvR.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        16,
+        10759,
+        10765,
+        35
+      ],
+      "popularity": 117.138,
+      "first_air_date": "2025-01-29",
+      "vote_average": 10,
+      "vote_count": 1,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/GtWV2PAAFZYYHAy788RI6xOMJ8.jpg",
+      "id": 610219,
+      "title": "The Fire Inside",
+      "original_title": "The Fire Inside",
+      "overview": "Claressa Shields, a high school junior from Flint, Michigan, aided by her tough-love coach, Jason Crutchfield, pushes past all limitations to become the first American woman to win an Olympic gold medal in boxing. But even at the pinnacle of success, Claressa has to reckon with the fact that not all dreams are created equal, and the real fight has only just begun.",
+      "poster_path": "/dMorkoCdZJ1xmKv0VAXcpUax6Ar.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        36,
+        18
+      ],
+      "popularity": 21.01,
+      "release_date": "2025-01-25",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 2
+    },
+    {
+      "backdrop_path": "/uKb22E0nlzr914bA9KyA5CVCOlV.jpg",
+      "id": 402431,
+      "title": "Wicked",
+      "original_title": "Wicked",
+      "overview": "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+      "poster_path": "/xDGbZ0JJ3mYaGKy4Nzd9Kph6M9L.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        10749,
+        14
+      ],
+      "popularity": 651.721,
+      "release_date": "2024-11-20",
+      "video": false,
+      "vote_average": 6.885,
+      "vote_count": 1540
+    },
+    {
+      "backdrop_path": "/4cp40IyTpFfsT2IKpl0YlUkMBIR.jpg",
+      "id": 1064213,
+      "title": "Anora",
+      "original_title": "Anora",
+      "overview": "A young sex worker from Brooklyn gets her chance at a Cinderella story when she meets and impulsively marries the son of an oligarch. Once the news reaches Russia, her fairytale is threatened as his parents set out to get the marriage annulled.",
+      "poster_path": "/7MrgIUeq0DD2iF7GR6wqJfYZNeC.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10749,
+        35,
+        18
+      ],
+      "popularity": 522.123,
+      "release_date": "2024-10-14",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 858
+    },
+    {
+      "backdrop_path": "/3SOunz2Z0qcOVlrkYFj20HquziB.jpg",
+      "id": 1114894,
+      "title": "Star Trek: Section 31",
+      "original_title": "Star Trek: Section 31",
+      "overview": "Emperor Philippa Georgiou joins a secret division of Starfleet tasked with protecting the United Federation of Planets and faces the sins of her past.",
+      "poster_path": "/sqiCinCzUGlzQiFytS30N1nO3Pt.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        12,
+        28,
+        18
+      ],
+      "popularity": 211.564,
+      "release_date": "2025-01-15",
+      "video": false,
+      "vote_average": 4.5,
+      "vote_count": 84
+    },
+    {
+      "backdrop_path": "/sc1abgWNXc29wSBaerrjGBih06l.jpg",
+      "id": 1084199,
+      "title": "Companion",
+      "original_title": "Companion",
+      "overview": "A billionaire's death sets off a chain of events for Iris and her friends during a weekend trip to his lakeside estate.",
+      "poster_path": "/oCoTgC3UyWGfyQ9thE10ulWR7bn.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        878,
+        53
+      ],
+      "popularity": 306.16,
+      "release_date": "2025-01-22",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 20
+    },
+    {
+      "backdrop_path": "/cP82Jtvn7DwVt0mWaDFm7QhWHez.jpg",
+      "id": 94951,
+      "name": "Mythic Quest",
+      "original_name": "Mythic Quest",
+      "overview": "Meet the team behind the biggest multiplayer video game of all time. But in a workplace focused on building worlds, molding heroes, and creating legends, the most hard-fought battles don’t occur in the game—they happen in the office.",
+      "poster_path": "/6ptAeRrOTQFajkYUGfct8OrqQca.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 94.969,
+      "first_air_date": "2020-02-07",
+      "vote_average": 7.3,
+      "vote_count": 344,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/iYLKMV7PIBtFmtygRrhSiyzcVsF.jpg",
+      "id": 277834,
+      "title": "Moana",
+      "original_title": "Moana",
+      "overview": "In Ancient Polynesia, when a terrible curse incurred by Maui reaches an impetuous Chieftain's daughter's island, she answers the Ocean's call to seek out the demigod to set things right.",
+      "poster_path": "/9tzN8sPbyod2dsa0lwuvrwBDWra.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        12,
+        35,
+        10751,
+        16
+      ],
+      "popularity": 77.739,
+      "release_date": "2016-10-13",
+      "video": false,
+      "vote_average": 7.565,
+      "vote_count": 12778
+    },
+    {
+      "backdrop_path": "/7h6TqPB3ESmjuVbxCxAeB1c9OB1.jpg",
+      "id": 933260,
+      "title": "The Substance",
+      "original_title": "The Substance",
+      "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+      "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        878
+      ],
+      "popularity": 747.129,
+      "release_date": "2024-09-07",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 3474
+    },
+    {
+      "backdrop_path": "/nGC3ZkXEcjGbqAAonS1xn6gaNpb.jpg",
+      "id": 1013850,
+      "title": "A Real Pain",
+      "original_title": "A Real Pain",
+      "overview": "Mismatched cousins David and Benji reunite for a tour through Poland to honor their beloved grandmother. The adventure takes a turn when the pair's old tensions resurface against the backdrop of their family history.",
+      "poster_path": "/yaTFjMNh8D78dDHrglivOTv5YOx.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "popularity": 271.563,
+      "release_date": "2024-11-01",
+      "video": false,
+      "vote_average": 6.886,
+      "vote_count": 306
+    },
+    {
+      "backdrop_path": "/s3FDBLH4qc1IcjexB05Qvbn3wxO.jpg",
+      "id": 449443,
+      "title": "Den of Thieves",
+      "original_title": "Den of Thieves",
+      "overview": "A gritty crime saga which follows the lives of an elite unit of the LA County Sheriff's Dept. and the state's most successful bank robbery crew as the outlaws plan a seemingly impossible heist on the Federal Reserve Bank.",
+      "poster_path": "/dAP5NpkrMMczir5dUPjRR6ywqgz.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "popularity": 251.366,
+      "release_date": "2018-01-18",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 2935
+    },
+    {
+      "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+      "id": 539972,
+      "title": "Kraven the Hunter",
+      "original_title": "Kraven the Hunter",
+      "overview": "Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.",
+      "poster_path": "/i47IUSsN126K11JUzqQIOi1Mg1M.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        878,
+        12,
+        14,
+        53
+      ],
+      "popularity": 2600.343,
+      "release_date": "2024-12-11",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 884
+    },
+    {
+      "backdrop_path": "/u2eA9pqi1q3DvevT7RuDuJHxxBT.jpg",
+      "id": 974950,
+      "title": "Emilia Pérez",
+      "original_title": "Emilia Pérez",
+      "overview": "Rita, an underrated lawyer working for a large law firm more interested in getting criminals out of jail than bringing them to justice, is hired by the leader of a criminal organization.",
+      "poster_path": "/7seqaCaaXDNUHOx4DqwpoOH8pPa.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "fr",
+      "genre_ids": [
+        18,
+        53
+      ],
+      "popularity": 379.381,
+      "release_date": "2024-08-21",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 999
+    },
+    {
+      "backdrop_path": "/8MtMFngDWvIdRo34rz3ao0BGBAe.jpg",
+      "id": 95396,
+      "name": "Severance",
+      "original_name": "Severance",
+      "overview": "Mark leads a team of office workers whose memories have been surgically divided between their work and personal lives. When a mysterious colleague appears outside of work, it begins a journey to discover the truth about their jobs.",
+      "poster_path": "/pPHpeI2X1qEd1CS1SeyrdhZ4qnT.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        9648,
+        10765
+      ],
+      "popularity": 452.794,
+      "first_air_date": "2022-02-17",
+      "vote_average": 8.4,
+      "vote_count": 1465,
+      "origin_country": [
+        "US"
+      ]
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}

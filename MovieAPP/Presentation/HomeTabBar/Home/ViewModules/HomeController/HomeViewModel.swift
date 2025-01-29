@@ -31,7 +31,9 @@ final class HomeViewModel {
     weak var navigation: HomeNavigation?
     
     init(navigation: HomeNavigation) {
+        
         trendingUse = TrendingAPIService()
+        
         self.navigation = navigation
     }
     
