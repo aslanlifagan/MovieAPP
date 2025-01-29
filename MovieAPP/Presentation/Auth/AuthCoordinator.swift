@@ -8,12 +8,18 @@
 import Foundation
 import UIKit.UINavigationController
 
+protocol AuthCoordinatorDelegate: AnyObject {
+    func changeRoot()
+}
+
 final class AuthCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     
     var children: [Coordinator] = []
     
     var navigationController: UINavigationController
+    
+    weak var delegate: AuthCoordinatorDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -33,8 +39,6 @@ extension AuthCoordinator: AuthNavigation {
     }
      
     func showHome() {
-        let coor = parentCoordinator as! AppCoordinator
-        coor.isLogin = true // bunu userdefault'da deyishmeliyik
-        coor.start()
+        delegate?.changeRoot()
     }
 }

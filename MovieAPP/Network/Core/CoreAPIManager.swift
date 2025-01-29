@@ -65,7 +65,7 @@ final class CoreAPIManager {
     ) {
         do {
             let response = try JSONDecoder().decode(T.self, from: data)
-            print("Response:",response)
+//            print("Response:",response)
             completion(.success(response))
         }
         catch {

@@ -14,11 +14,24 @@ final class AppCoordinator: Coordinator {
     var children: [Coordinator] = []
     
     var navigationController: UINavigationController
-    
     // burada userDefaults'dan istifade edirik
-    var isLogin: Bool = true
-    init(navigationController: UINavigationController) {
+    var isLogin: Bool = false
+    init(
+        navigationController: UINavigationController
+    ) {
         self.navigationController = navigationController
+        setupObserver()
+    }
+    
+    private func setupObserver() {
+        NotificationCenter
+            .default
+            .addObserver(
+                self,
+                selector: #selector(listener),
+                name: NSNotification.Name("auth.session.exp"),
+                object: nil
+            )
     }
     
     func start() {
@@ -29,19 +42,54 @@ final class AppCoordinator: Coordinator {
         }
     }
     
+    deinit {
+        NotificationCenter.default
+            .removeObserver(
+                self,
+                name:  NSNotification.Name(
+                    "auth.session.exp"
+                ),
+                object: nil
+            )
+    }
+    
     fileprivate func showAuth() {
+        navigationController.setViewControllers([], animated: false)
+        let coordinator = AuthCoordinator.init(navigationController: navigationController)
+        /// Remove all children, because this is a top level coordinator.
         children.removeAll()
-        let authCoordinator = AuthCoordinator(navigationController: navigationController)
-        children.append(authCoordinator)
-        authCoordinator.parentCoordinator = self
-        authCoordinator.start()
+        
+        coordinator.parentCoordinator = self
+        children.append(coordinator)
+        coordinator.delegate = self
+        coordinator.start()
     }
     
     fileprivate func showHome() {
+        // Initiate HomeTabBar Coordinator
+        navigationController.setViewControllers([], animated: false)
+        let coordinator = HomeTabBarCoordinator.init(navigationController: navigationController)
+        // Remove all children, because this is a top level coordinator.
         children.removeAll()
-        let homeTabBar = HomeTabBarCoordinator(navigationController: navigationController)
-        children.append(homeTabBar)
-        homeTabBar.parentCoordinator = self
-        homeTabBar.start()
+        coordinator.parentCoordinator = self
+        children.append(coordinator)
+        coordinator.start()
+    }
+    
+    @objc
+    private func listener() {
+        print(#function)
+        
+        DispatchQueue.main.async {
+
+            self.showAuth()
+        }
+    }
+}
+
+extension AppCoordinator: AuthCoordinatorDelegate {
+    func changeRoot() {
+        isLogin = true
+        start()
     }
 }

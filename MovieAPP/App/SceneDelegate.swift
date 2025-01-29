@@ -19,8 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         // Create a new UIWindow with the given scene
-        let navController = UINavigationController()
-        appCoordinator = AppCoordinator(navigationController: navController)
+        let navController = UINavigationController.init()
+        appCoordinator = AppCoordinator(
+            navigationController: navController
+        )
         appCoordinator?.start()
         // Make the window visible
         window = UIWindow(windowScene: windowScene)

@@ -117,9 +117,10 @@ final class LoginController: BaseViewController {
     }
     @objc
     private func loginButtonClicked() {
-        guard let email = emailField.text,
-              let pass = passField.text else {return}
-        viewModel.loginRequest(email: email, password: pass)
+//        guard let email = emailField.text,
+//              let pass = passField.text else {return}
+//        viewModel.loginRequest(email: email, password: pass)
+        viewModel.showHome()
     }
     
     @objc
